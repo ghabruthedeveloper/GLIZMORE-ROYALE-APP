@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="description" content="Glizmore Royale - Premium integrated township in Mhasla, Raigad. Residential and farmhouse plots near Konkan coast.">
+    <title>Glizmore Royale - Premium Township</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { -webkit-tap-highlight-color: transparent; }
+        body { overscroll-behavior: none; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        .hidden { display: none !important; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .animate-bounce { animation: bounce 2s infinite; }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    
+    <!-- Home View -->
+    <div id="home-view" class="view">
+        <div class="relative h-screen bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1464146072230-91cabc968266?w=800)">
+            <div class="absolute top-0 left-0 right-0 p-4 flex justify-between items-center z-20">
+                <svg class="w-8 h-8 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                <button id="menu-btn" class="text-white">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+
+            <div id="menu" class="hidden absolute top-16 right-4 bg-slate-800 rounded-2xl shadow-2xl p-4 z-30 w-48">
+                <button onclick="showView('home')" class="block w-full text-left text-white py-3 px-4 hover:bg-slate-700 rounded-lg">Home</button>
+                <button onclick="showView('plots')" class="block w-full text-left text-white py-3 px-4 hover:bg-slate-700 rounded-lg">Plots</button>
+                <button onclick="showView('contact')" class="block w-full text-left text-white py-3 px-4 hover:bg-slate-700 rounded-lg">Contact</button>
+            </div>
+
+            <div class="flex flex-col justify-center items-center h-full px-6 text-center text-white">
+                <h1 class="text-5xl font-bold mb-4">GLIZMORE ROYALE</h1>
+                <p class="text-lg text-gray-200 mb-6 max-w-md">Experience luxury, peace, and growth near the coast of Konkan</p>
+                <div class="flex items-center gap-2 text-emerald-400 mb-8">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span class="text-sm">Mhasla, Raigad</span>
+                </div>
+                <button onclick="showView('plots')" class="px-8 py-4 bg-emerald-500 text-white rounded-full font-semibold flex items-center gap-2 shadow-lg">
+                    View Plots 
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </button>
+            </div>
+
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+        </div>
+
+        <div class="bg-slate-800 p-6">
+            <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
+                <div class="text-center">
+                    <svg class="w-8 h-8 text-emerald-400 mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <p class="text-2xl font-bold text-white">4.8</p>
+                    <p class="text-xs text-gray-400">Rating</p>
+                </div>
+                <div class="text-center">
+                    <svg class="w-8 h-8 text-emerald-400 mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <p class="text-2xl font-bold text-white">200+</p>
+                    <p class="text-xs text-gray-400">Happy Owners</p>
+                </div>
+                <div class="text-center">
+                    <svg class="w-8 h-8 text-emerald-400 mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <p class="text-2xl font-bold text-white">100%</p>
+                    <p class="text-xs text-gray-400">Verified</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 p-6 pb-20">
+            <h2 class="text-3xl font-bold text-white mb-6 text-center">Why Choose Us?</h2>
+            <div class="space-y-4 max-w-md mx-auto">
+                <div class="bg-slate-800 p-5 rounded-2xl flex items-start gap-4">
+                    <svg class="w-10 h-10 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-1">Serene Location</h3>
+                        <p class="text-gray-400 text-sm">Peaceful hillside setting</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800 p-5 rounded-2xl flex items-start gap-4">
+                    <svg class="w-10 h-10 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-1">Premium Plots</h3>
+                        <p class="text-gray-400 text-sm">Residential & farmhouse options</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800 p-5 rounded-2xl flex items-start gap-4">
+                    <svg class="w-10 h-10 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-1">Easy Access</h3>
+                        <p class="text-gray-400 text-sm">27 km from Mangaon Station</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plots View -->
+    <div id="plots-view" class="view hidden">
+        <div class="sticky top-0 bg-slate-800 p-4 flex items-center gap-4 shadow-lg z-10">
+            <button onclick="showView('home')" class="text-white">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            </button>
+            <h2 class="text-2xl font-bold text-white">Available Plots</h2>
+        </div>
+
+        <div class="p-4 space-y-4 pb-20">
+            <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl">
+                <div class="h-48 bg-cover bg-center" style="background-image: url(https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800)"></div>
+                <div class="p-5">
+                    <h3 class="text-2xl font-bold text-white mb-3">Residential Plots</h3>
+                    <div class="flex items-baseline gap-2 mb-3">
+                        <span class="text-3xl font-bold text-emerald-400">₹400</span>
+                        <span class="text-gray-400 text-sm">per sq.ft</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">From 2,500 sq.ft</p>
+                    <p class="text-sm text-gray-400 mb-4">2,000 sq.ft minimum</p>
+                    <div class="space-y-2 mb-5">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span class="text-gray-300 text-sm">Prime location</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span class="text-gray-300 text-sm">Clear documentation</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span class="text-gray-300 text-sm">Immediate possession</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span class="text-gray-300 text-sm">Gated community</span>
+                        </div>
+                    </div>
+                    <button onclick="selectPlot('Residential Plots')" class="w-full py-3 bg-emerald-500 text-white font-semibold rounded-xl">Book Now</button>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-xl">
+                <div class="h-48 bg-cover bg-center" style="background-image: url(https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800)"></div>
+                <div class="p-5">
+                    <h3 class="text-2xl font-bold text-white mb-3">Farmhouse Plots</h3>
+                    <div class="flex items-baseline gap-2 mb-3">
+                        <span class="text-3xl font-bold text-emerald-400">₹199</span>
+                        <span class="text-gray-400 text-sm">per sq.ft</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">From 20,000 sq.ft</p>
+                    <p class="text-sm text-gray-400 mb-4">20,000 sq.ft minimum</p>
+                    <div class="space-y-2 mb-5">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span class="text-gray-300 text-sm">Spacious land</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span class="text-gray-300 text-sm">Natural surroundings</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span class="text-gray-300 text-sm">Investment opportunity</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span class="text-gray-300 text-sm">Peaceful retreat</span>
+                        </div>
+                    </div>
+                    <button onclick="selectPlot('Farmhouse Plots')" class="w-full py-3 bg-emerald-500 text-white font-semibold rounded-xl">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact View -->
+    <div id="contact-view" class="view hidden">
+        <div class="sticky top-0 bg-slate-800 p-4 flex items-center gap-4 shadow-lg z-10">
+            <button onclick="showView('home')" class="text-white">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            </button>
+            <h2 class="text-2xl font-bold text-white">Contact Us</h2>
+        </div>
+
+        <div id="contact-form" class="p-6 pb-20">
+            <p class="text-gray-300 mb-8 text-center">Fill out the form and our team will contact you shortly</p>
+            
+            <div id="selected-plot" class="hidden bg-emerald-900 text-white p-4 rounded-xl mb-6 text-center">
+                <p class="text-sm">Selected: <span id="selected-plot-name" class="font-bold"></span></p>
+            </div>
+
+            <div class="space-y-5 max-w-md mx-auto">
+                <div>
+                    <label class="block text-gray-300 mb-2 font-semibold text-sm">Name</label>
+                    <input type="text" id="name" class="w-full px-4 py-4 bg-slate-800 text-white rounded-xl text-lg" placeholder="Your name">
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-2 font-semibold text-sm">Email</label>
+                    <input type="email" id="email" class="w-full px-4 py-4 bg-slate-800 text-white rounded-xl text-lg" placeholder="your@email.com">
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-2 font-semibold text-sm">Phone</label>
+                    <input type="tel" id="phone" class="w-full px-4 py-4 bg-slate-800 text-white rounded-xl text-lg" placeholder="+91 XXXXX XXXXX">
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-2 font-semibold text-sm">Plot Type</label>
+                    <select id="plot-type" class="w-full px-4 py-4 bg-slate-800 text-white rounded-xl text-lg">
+                        <option value="residential">Residential Plot</option>
+                        <option value="farmhouse">Farmhouse Plot</option>
+                    </select>
+                </div>
+                <button onclick="submitForm()" class="w-full py-4 bg-emerald-500 text-white font-bold rounded-xl text-lg shadow-lg mt-6">Submit Inquiry</button>
+            </div>
+
+            <div class="mt-12 max-w-md mx-auto">
+                <h3 class="text-white font-bold mb-4 text-center">Other Ways to Reach Us</h3>
+                <div class="space-y-4">
+                    <div class="bg-slate-800 p-4 rounded-xl flex items-center gap-4">
+                        <svg class="w-6 h-6 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <div>
+                            <p class="text-gray-400 text-sm">Call us</p>
+                            <p class="text-white font-semibold">+91 XXXXX XXXXX</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-xl flex items-center gap-4">
+                        <svg class="w-6 h-6 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <div>
+                            <p class="text-gray-400 text-sm">Email us</p>
+                            <p class="text-white font-semibold">info@glizmore.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="success-message" class="hidden flex items-center justify-center h-screen px-6">
+            <div class="bg-emerald-600 text-white p-8 rounded-2xl text-center max-w-sm animate-fade-in">
+                <svg class="w-16 h-16 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <h3 class="text-2xl font-bold mb-2">Thank You!</h3>
+                <p class="mb-4">We'll contact you shortly</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-slate-800 border-t border-slate-700 px-4 py-3 flex justify-around z-50">
+        <button onclick="showView('home')" class="nav-btn flex flex-col items-center gap-1" data-view="home">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span class="text-xs">Home</span>
+        </button>
+        <button onclick="showView('plots')" class="nav-btn flex flex-col items-center gap-1" data-view="plots">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+            <span class="text-xs">Plots</span>
+        </button>
+        <button onclick="showView('contact')" class="nav-btn flex flex-col items-center gap-1" data-view="contact">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="text-xs">Contact</span>
+        </button>
+    </nav>
+
+    <script>
+        let selectedPlotType = null;
+
+        function showView(viewName) {
+            // Hide all views
+            document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+            
+            // Show selected view
+            document.getElementById(viewName + '-view').classList.remove('hidden');
+            
+            // Update nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if (btn.dataset.view === viewName) {
+                    btn.classList.add('text-emerald-400');
+                    btn.classList.remove('text-gray-400');
+                } else {
+                    btn.classList.add('text-gray-400');
+                    btn.classList.remove('text-emerald-400');
+                }
+            });
+
+            // Close menu
+            document.getElementById('menu').classList.add('hidden');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function selectPlot(plotType) {
+            selectedPlotType = plotType;
+            document.getElementById('selected-plot-name').textContent = plotType;
+            document.getElementById('selected-plot').classList.remove('hidden');
+            showView('contact');
+        }
+
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            if (name && email && phone) {
+                document.getElementById('contact-form').classList.add('hidden');
+                document.getElementById('success-message').classList.remove('hidden');
+                
+                setTimeout(() => {
+                    document.getElementById('contact-form').classList.remove('hidden');
+                    document.getElementById('success-message').classList.add('hidden');
+                    document.getElementById('name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('phone').value = '';
+                    selectedPlotType = null;
+                    document.getElementById('selected-plot').classList.add('hidden');
+                    showView('home');
+                }, 2500);
+            } else {
+                alert('Please fill in all fields');
+            }
+        }
+
+        // Menu toggle
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('menu').classList.toggle('hidden');
+        });
+
+        // Initialize - show home and set active nav
+        showView('home');
+    </script>
+</body>
+</html>
